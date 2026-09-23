@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "dev": "node tools/serve.mjs",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "check": "npm run typecheck && npm run build && node tools/cek.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.6"
+  }
+}

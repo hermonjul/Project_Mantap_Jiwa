@@ -1,0 +1,7 @@
+const r = DATA.risikoOrang({}), t = DATA.moTurun({})
+console.log('unit dinilai:', r.semua.length, '| tinggi:', r.tinggi.length, '| sedang:', r.sedang.length)
+console.log('nilai bertumpu satu orang:', DATA.FMT.rp(r.nilaiTinggi), '=', DATA.FMT.pct(r.porsiNasional, 1), 'produksi nasional')
+r.tinggi.slice(0, 10).forEach((x) => console.log('  ' + x.nama.padEnd(24) + String(x.nMo).padStart(3) + ' MO  ' + DATA.FMT.rp(x.nwp).padStart(9) + '  ' + x.moNama.padEnd(28) + DATA.FMT.pct(x.porsi, 0)))
+console.log('MO nol/negatif:', t.total, '| perlu ditanya:', t.turun.length, '| kecil sejak dulu:', t.kecilSejakDulu, '| baru:', t.baru)
+console.log('produksi 2025 yang dibawa:', DATA.FMT.rp(t.nilai25))
+t.turun.slice(0, 8).forEach((x) => console.log('  ' + x.nama.padEnd(30) + x.cabang.padEnd(18) + DATA.FMT.rp(x.p25).padStart(9) + ' -> ' + DATA.FMT.rp(x.p26)))
